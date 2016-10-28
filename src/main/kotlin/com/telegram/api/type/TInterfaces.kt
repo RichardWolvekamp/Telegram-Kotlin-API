@@ -1,0 +1,5 @@
+package com.telegram.api.type
+
+interface TInputMessageContent
+interface TInlineQueryResult
+interface TReplyMarkup

@@ -1,5 +1,0 @@
-package com.tgminigames.telegram
-
-interface TInputMessageContent
-interface TInlineQueryResult
-interface TReplyMarkup
