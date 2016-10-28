@@ -13,7 +13,7 @@ class TelegramServer(token: String) {
 
 	init {
 		val adapter = Retrofit.Builder()
-				.baseUrl("https://api.type.org/bot$token/")
+				.baseUrl("https://api.telegram.org/bot$token/")
 				.addConverterFactory(GsonConverterFactory.create())
 				.build()
 
