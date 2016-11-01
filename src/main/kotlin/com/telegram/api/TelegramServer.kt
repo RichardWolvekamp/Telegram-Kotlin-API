@@ -29,16 +29,16 @@ class TelegramServer(token: String) {
 
 		this.isStarted = true
 
-		var offset: Long = 0;
+		var offset: Long = 0
 
 		while (!this.shouldStop) {
 			println("Getting updates")
 
-			val request = this.service.getUpdates(offset, 100, 5).execute()
+			val request = this.service.getUpdates(offset, 100, 60).execute()
 			val updates = request.body()
 
 			if (updates != null && updates.ok && updates.result != null) {
-				if (updates.result.size > 0) {
+				if (updates.result.isNotEmpty()) {
 					offset = updates.result.last().update_id + 1
 
 					for (update: TUpdate in updates.result) {

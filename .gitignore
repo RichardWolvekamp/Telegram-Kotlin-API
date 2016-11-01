@@ -1,2 +1,5 @@
 .idea/
 *.iml
+settings.xml
+classes/
+target/
