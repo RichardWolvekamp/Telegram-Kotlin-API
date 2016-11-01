@@ -6,11 +6,15 @@
 
 	<groupId>com.telegram.api</groupId>
 	<artifactId>telegram-kotlin-api</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>Telegram Kotlin API</name>
+	<description>Telegram bot API made with Kotlin</description>
+	<url>https://github.com/RichardWolvekamp/Telegram-Kotlin-API</url>
 
 	<properties>
 		<kotlin.version>1.0.1-2</kotlin.version>
-		<junit.version>4.12</junit.version>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -33,30 +37,18 @@
 							<goal>compile</goal>
 						</goals>
 					</execution>
-					<execution>
-						<id>test-compile</id>
-						<phase>test-compile</phase>
-						<goals>
-							<goal>test-compile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.2.1</version>
-				<executions>
-					<execution>
-						<phase>test</phase>
-						<goals>
-							<goal>java</goal>
-						</goals>
-					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>bintray-telegram-kotlin-Telegram-Kotlin-API</id>
+			<name>telegram-kotlin-Telegram-Kotlin-API</name>
+			<url>http://dl.bintray.com/telegram-kotlin/Telegram-Kotlin-API</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
