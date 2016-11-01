@@ -10,6 +10,7 @@ class TelegramServer(token: String) {
 	private val me: TUser
 	private var isStarted: Boolean = false
 	private var shouldStop: Boolean = false
+	var handler: (TUpdate) -> Unit = {}
 
 	init {
 		val adapter = Retrofit.Builder()
@@ -19,6 +20,10 @@ class TelegramServer(token: String) {
 
 		this.service = adapter.create(TelegramService::class.java)
 		this.me = this.service.getMe().execute().body().result!!
+	}
+
+	fun api(): TelegramService {
+		return this.service
 	}
 
 	fun start() {
@@ -41,10 +46,7 @@ class TelegramServer(token: String) {
 				if (updates.result.isNotEmpty()) {
 					offset = updates.result.last().update_id + 1
 
-					for (update: TUpdate in updates.result) {
-						println("chat_id: " + update.message.chat.id)
-						println(update)
-					}
+					updates.result.forEach { this.handler(it) }
 				}
 			} else {
 				if (request.code() == 409) {

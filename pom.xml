@@ -6,7 +6,7 @@
 
 	<groupId>com.telegram.api</groupId>
 	<artifactId>telegram-kotlin-api</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 	<packaging>jar</packaging>
 
 	<name>Telegram Kotlin API</name>
@@ -46,7 +46,7 @@
 		<repository>
 			<id>bintray-telegram-kotlin-Telegram-Kotlin-API</id>
 			<name>telegram-kotlin-Telegram-Kotlin-API</name>
-			<url>http://dl.bintray.com/telegram-kotlin/Telegram-Kotlin-API</url>
+			<url>https://api.bintray.com/maven/telegram-kotlin/Telegram-Kotlin-API/Telegram-Kotlin-API/;publish=1</url>
 		</repository>
 	</distributionManagement>
 
